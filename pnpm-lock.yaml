@@ -27,9 +27,18 @@ importers:
       '@types/react-dom':
         specifier: ^19.0.3
         version: 19.0.3(@types/react@19.0.8)
+      '@tailwindcss/postcss': 
+        specifier: ^4.0.12
+        version: 4.0.12
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
+      postcss: 
+        specifier: ^8.5.3
+        verison: 8.5.3
+		  tailwindcss: 
+        specifier: ^4.0.12
+        version: 4.0.12
 
 packages:
 
