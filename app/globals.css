@@ -1,8 +1,10 @@
 @import 'tailwindcss';
 
 @theme {
-    --color-midnight: #121063;
-    --color-tahiti: #3ab7bf;
-    --color-bermuda: #78dcca;
+    --color-midnight: #463668;
+    --color-shockingpinky: #f10fcb;
+    --color-purpleheart: #7039d4;
+    --color-viking: #58c8d5;
+    --color-cream: #f2d050;
     --color-mint-500: oklch(0.72 0.11 178);
 }

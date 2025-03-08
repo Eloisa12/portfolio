@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Background</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+    <script src="#"></script> <!--placeholder for your .js file>-->
+</head>
+
+<body>
+    <script>
+        
+let button, button2;
+function setup() {
+  
+  createCanvas(400, 400);
+  // Button 2 to create balls
+  // Disable in week4 
+  /*button2 = createButton("");
+  button2.size(140, 15);
+  button2.position(250, 40);
+  button2.style('background-color', '#ffcce0');
+  button2.mouseClicked(printBalls);*/
+  // Clike button 1 to change its position
+  button = createButton("?##/");
+  button.size(50,50);
+  button.position(10,120);
+  button.style('background-color', '#42f5dd');
+  button.style('font', 'Helvetica');
+  button.mouseClicked(moveIt);
+}
+
+function draw() {
+  // background(220)(not neccesary needed)
+  
+  // Create gradient background
+  let c1, c2;
+  // Top color is purple
+  c1 = color(228, 122, 255);
+  // Bottom color is light pink-orange
+  c2 = color(255, 224, 204);
+  // Using lerp color to create gradient color lines
+  for (let y = 0; y < 400; y += 3) {
+    const lineColor = lerpColor(c1, c2, y / 150);
+    stroke(lineColor);
+    line(0, y, 400, y);
+  }
+  
+  // Draw buildings
+  // Background builiding(left2)
+  fill(50, 200, 156);
+  noStroke();
+  rect(0, 100, 120, 300);
+  fill(95, 255, 192);
+  quad(120, 100, 140, 120, 140, 400, 120, 400);
+  // Background building(left1)
+  quad(0, 220, 140, 300, 140, 400, 0, 400);
+  
+  // Front building
+  fill(c1);
+  rect(100, 180, 300, 260);
+  // Window loop
+  for (var n = 110; n <= 500; n += 50) {
+    fill(255, 224, 204);
+    rect(n, 230, 30, 30);
+  }
+  
+  // Foreground stairs
+  stroke(127, 81, 158);
+  strokeWeight(10);
+  line(400, 250, 0, 340);
+  for (var a = 0, b = 340; a <= 500; a += 400 / 9, b -= 10) {
+    line(a, b, a, 400);
+  }
+  noStroke();
+  fill(127, 81, 158);
+  triangle(400, 360, 200, 400, 400, 400);
+  
+  // Moon
+  noStroke();
+  fill(c2);
+  ellipse(350, 50, 50, 50);
+  
+  // Console window
+  strokeWeight(2);
+  stroke(40, 80, 108);
+  rect(250, 40, 140, 15);
+  // Draw 3 options button at the bar
+  for (var i = 370; i <= 380; i += 5) {
+    fill(c1);
+    rect(i, 45, 5, 5);
+  }
+  // Console window color
+  fill(95, 255, 192, 60);
+  rect(250, 40, 140, 160);
+  
+  
+  // Mouse movement to switch between day and night
+  noStroke();
+  yc = constrain(mouseY,0,400);
+  // Night shift
+  let iy = -(yc-400);
+  fill(125,31,156,20);
+  ellipse(200, 200, yc*2, yc*2);
+  // Day shift
+  fill(95, 255, 192,20);
+  ellipse(200, 200, iy*2, iy*2);
+}
+  
+// call a function to create infinite circle
+// in background
+function printBalls() {
+  for (let z = 0; z < 100; z++) {
+    push();
+    fill(random(255), 255, 245);
+    translate(random(width), random(height));
+    rotate(random(2 * PI));
+    ellipse(50,50,50,50);
+    pop();
+  }
+}
+
+// Mouse movement to switch between day and night
+/*function draw () {
+noStroke();
+//constrain(mouseY,0,100);
+// Night shift
+let iy = (mouseY-200);
+fill(125,31,156,20);
+ellipse(200, 200, mouseY, mouseY);
+// Day shift
+fill(95, 255, 192,20);
+ellipse(200, 200, iy, iy);
+}*/
+
+
+// function to move the button
+function moveIt() {
+  button.position(random(width), random(height));
+}
+        
+                
+    </script>
+</body>
+
+</html>
