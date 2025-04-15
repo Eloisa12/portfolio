@@ -1,5 +1,5 @@
 "use client";
-import { useDarkMode } from './DarkModeContext';
+// import { useDarkMode } from './DarkModeContext';
 
 interface CloseSunProps {
     onClose: () => void; // Declare the prop type for TypeScript
