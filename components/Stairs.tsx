@@ -2,7 +2,7 @@
 
 export default function Stairs() {
   return (
-    <div className="w-[45vw] h-[40vh] fixed left-0 bottom-0 flex">
+    <div className="w-[45vw] h-[20vh] fixed left-0 bottom-0 flex">
         <div className="flex flex-wrap justify-evenly w-full h-full">
         {[...Array(8)].map((_, i) => (
           <div
