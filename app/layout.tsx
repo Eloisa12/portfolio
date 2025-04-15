@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import './globals.css'
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: 'Next.js on GitHub Pages',
   description: 'Deploy your static Next.js site to GitHub Pages.',
+};
+
+export const initialState = {
+  darkmode: typeof window !== "undefined" ? window.localStorage.getItem('darkmode') : false,
 };
 
 export default function RootLayout({
@@ -12,7 +15,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const darkmode = localStorage.getItem("Darkmode");
+  const darkmode = localStorage.getItem("darkmode");
   if (darkmode == null)
     return (
       <html lang="en">
