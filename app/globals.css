@@ -8,3 +8,5 @@
     --color-cream: #f2d050;
     --color-mint-500: oklch(0.72 0.11 178);
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
