@@ -8,7 +8,7 @@ export default function Building() {
         {[...Array(9)].map((_, i) => (
           <div
             key={i}
-            className="w-[10vw] h-[10vw] max-w-[60px] max-h-[60px] bg-cream shadow-md hover:bg-sky-700"
+            className="w-[10vw] h-[10vw] max-w-[60px] max-h-[60px] bg-sky-900 shadow-md hover:bg-cream"
           ></div>
         ))}
       </div>
@@ -18,7 +18,7 @@ export default function Building() {
         {[...Array(9)].map((_, i) => (
           <div
             key={i}
-            className="w-[10vw] h-[10vw] max-w-[60px] max-h-[60px] bg-cream hover:bg-sky-700 shadow-md"
+            className="w-[10vw] h-[10vw] max-w-[60px] max-h-[60px] bg-sky-900 shadow-md hover:bg-cream"
           ></div>
         ))}
       </div>
