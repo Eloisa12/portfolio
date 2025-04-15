@@ -10,6 +10,7 @@ export default function CloseSun({ onClose }: CloseSunProps) {
 
     function handleClick() {
         // setIsDarkMode(true);
+        localStorage.setItem("Darkmode", "on");
         onClose();
     }
     return (

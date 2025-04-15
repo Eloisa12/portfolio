@@ -12,9 +12,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className='h-dvh bg-linear-to-b from-purple-400 to-pink-300 bg-no-repeat'>{children}</body>
-    </html>
-  );
+  const darkmode = localStorage.getItem("Darkmode");
+  if (darkmode == null) {
+    return (
+      <html lang="en">
+        <body className='h-dvh bg-linear-to-b from-purple-200 to-pink-400  bg-no-repeat'>{children}</body>
+      </html>
+    );
+  }
+  else (darkmode == "on") {
+    return (
+      <html lang="en">
+        <body className='h-dvh bg-linear-to-b from-purple-950 to-blue-800 bg-no-repeat'>{children}</body>
+      </html>
+    );
+  }
 }
