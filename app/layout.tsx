@@ -13,18 +13,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const darkmode = localStorage.getItem("Darkmode");
-  if (darkmode == null) {
+  if (darkmode == null)
     return (
       <html lang="en">
         <body className='h-dvh bg-linear-to-b from-purple-200 to-pink-400  bg-no-repeat'>{children}</body>
       </html>
     );
-  }
-  else (darkmode == "on") {
+  else (darkmode == "on")
     return (
       <html lang="en">
         <body className='h-dvh bg-linear-to-b from-purple-950 to-blue-800 bg-no-repeat'>{children}</body>
       </html>
     );
-  }
 }
